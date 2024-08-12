@@ -37,7 +37,7 @@ export default function Home() {
   const loadingContainer = <div>
     <h1>加载中...</h1>
   </div>
-  const [bgContainer,setbgContainer] = React.useState(container);
+  const [bgContainer,setbgContainer] = React.useState(loadingContainer);
   React.useEffect(() => {
     if (loadStatus) {
       setbgContainer(container);
