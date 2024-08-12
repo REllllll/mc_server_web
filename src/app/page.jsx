@@ -35,7 +35,7 @@ export default function Home() {
     <img src={bgList[(bgIndex + 1) % bgList.length]} className={`${styles.bg} ${styles.fadeIn}`} />
   </div>
   const loadingContainer = <div>
-    <h1>加载中...</h1>
+    <h1 className={styles.loadingText}>加载背景图中...</h1>
   </div>
   const [bgContainer,setbgContainer] = React.useState(loadingContainer);
   React.useEffect(() => {
