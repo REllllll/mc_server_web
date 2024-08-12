@@ -16,12 +16,35 @@ export default function Home() {
     "/bgs/8.png"];
   const [bgIndex, setBgIndex] = React.useState(0);
 
+  // 创建一个容器让图片提前加载
+  const bgs = bgList.map((bg, index) => {
+    return <img key={index} src={bg} style={{ display: "none" }} />
+  });
+  const preloadContainer = <div>
+    {bgs}
+  </div>
+
+  const [loadStatus, setloadStatus] = React.useState(false);
+  React.useEffect(() => {
+    setloadStatus(true);
+  }, []);
+
   // 设置轮播淡出淡入效果
   const container = <div>
     <img src={bgList[bgIndex]} className={styles.bg} />
     <img src={bgList[(bgIndex + 1) % bgList.length]} className={`${styles.bg} ${styles.fadeIn}`} />
   </div>
+  const loadingContainer = <div>
+    <h1>加载中...</h1>
+  </div>
   const [bgContainer,setbgContainer] = React.useState(container);
+  React.useEffect(() => {
+    if (loadStatus) {
+      setbgContainer(container);
+    } else {
+      setbgContainer(loadingContainer);
+    }
+  }, [loadStatus]);
   React.useEffect(() => {
     const interval_bgIndex = setInterval(() => {
       setBgIndex((bgIndex + 1) % bgList.length);
@@ -40,6 +63,7 @@ export default function Home() {
 
   return (
     <main>
+      {preloadContainer}
       <div className="container" style={{ height: '100vh' }}>
         <div className="row align-items-center" style={{ height: '100vh' }}>
           <div className="col">
