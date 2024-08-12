@@ -20,7 +20,7 @@ export default function Home() {
   const bgs = bgList.map((bg, index) => {
     return <img key={index} src={bg} style={{ display: "none" }} />
   });
-  const preloadContainer = <div>
+  const preloadContainer = <div style={{ display: "none" }}>
     {bgs}
   </div>
 
