@@ -6,13 +6,13 @@ export default function Home() {
 
   // 设置背景轮播图
   const bgList = [
-    "/bgs/1.png",
-    "/bgs/2.png",
-    "/bgs/4.png",
-    "/bgs/5.png",
-    "/bgs/6.png",
-    "/bgs/7.png",
-    "/bgs/8.png"];
+    "/bgs/1.webp",
+    "/bgs/2.webp",
+    "/bgs/4.webp",
+    "/bgs/5.webp",
+    "/bgs/6.webp",
+    "/bgs/7.webp",
+    "/bgs/8.webp"];
   const [bgIndex, setBgIndex] = React.useState(0);
 
   // 创建一个容器让图片提前加载
