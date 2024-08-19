@@ -8,7 +8,6 @@ export default function Home() {
   const bgList = [
     "/bgs/1.png",
     "/bgs/2.png",
-    "/bgs/3.png",
     "/bgs/4.png",
     "/bgs/5.png",
     "/bgs/6.png",
