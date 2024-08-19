@@ -11964,4 +11964,8 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+@font-face {
+  font-family: "Minecraft";
+  src: url("/fonts/MinecraftTen-VGORe.ttf");
 }/*# sourceMappingURL=globals.css.map */
